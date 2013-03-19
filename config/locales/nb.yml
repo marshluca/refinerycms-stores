@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      stores:
+        title: Stores
+    stores:
+      admin:
+        stores:
+          actions:
+            create_new: Lag en ny Store
+            reorder: Endre rekkefølgen på Stores
+            reorder_done: Ferdig å endre rekkefølgen Stores
+          records:
+            title: Stores
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Stores enda. Klikk på "Lag en ny Store" for å legge til din første store.
+          store:
+            view_live_html: Vis hvordan denne store ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne store
+            delete: Fjern denne store permanent
+      stores:
+        show:
+          other: Andre Stores
+  activerecord:
+    attributes:
+      'refinery/stores/store':
+        title: Title
+        description: Description
+        image: Image
+        file: File

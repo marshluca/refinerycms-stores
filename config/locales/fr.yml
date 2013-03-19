@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      stores:
+        title: Stores
+    stores:
+      admin:
+        stores:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Store
+            reorder: Réordonner les Stores
+            reorder_done: Fin de réordonnancement des Stores
+          records:
+            title: Stores
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Store. Cliquer sur "Créer un(e) nouve(au/l/lle) Store" pour créer votre premi(er/ère) store.'
+          store:
+            view_live_html: Voir ce(t/tte) store <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) store
+            delete: Supprimer définitivement ce(t/tte) store
+      stores:
+        show:
+          other: Autres Stores
+  activerecord:
+    attributes:
+      'refinery/stores/store':
+        title: Title
+        description: Description
+        image: Image
+        file: File

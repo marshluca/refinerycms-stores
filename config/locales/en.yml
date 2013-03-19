@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      stores:
+        title: Stores
+    stores:
+      admin:
+        stores:
+          actions:
+            create_new: Add New Store
+            reorder: Reorder Stores
+            reorder_done: Done Reordering Stores
+          records:
+            title: Stores
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Stores yet. Click "Add New Store" to add your first store.
+          store:
+            view_live_html: View this store live <br/><em>(opens in a new window)</em>
+            edit: Edit this store
+            delete: Remove this store forever
+      stores:
+        show:
+          other: Other Stores
+  activerecord:
+    attributes:
+      'refinery/stores/store':
+        title: Title
+        description: Description
+        image: Image
+        file: File

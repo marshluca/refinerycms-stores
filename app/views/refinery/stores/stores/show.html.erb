@@ -1,0 +1,49 @@
+<% content_for :body_content_title do %>
+  <%= @store.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @store.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @store.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @store.image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>File</h1>
+    <p>
+      <% if @store.file.present? %>
+        <%= link_to 'file', @store.file.url %>
+      <% else %>
+        file
+      <% end %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="stores">
+      <% @stores.each do |store| %>
+        <li>
+          <%= link_to store.title, refinery.stores_store_path(store) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

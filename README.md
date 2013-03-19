@@ -1,4 +1,4 @@
-refinerycms-store
+refinerycms-stores
 =================
 
-Store engine for Refinery CMS
+Stores engine for Refinery CMS

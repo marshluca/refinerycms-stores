@@ -1,0 +1,31 @@
+es:
+  refinery:
+    plugins:
+      stores:
+        title: Stores
+#        article: masculino/femenino
+    stores:
+      admin:
+        stores:
+          actions:
+            create_new: Crear nuevo store
+            reorder: Reordenar stores
+            reorder_done: Reordenación de stores completada
+          records:
+            title: Stores
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay stores todavía. Pulsa en "Crear nuevo Store" para crear tu primer store.
+          store:
+            view_live_html: Ver este store como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este store
+            delete: Borrar este store para siempre
+      stores:
+        show:
+          other: Otros stores
+  activerecord:
+    attributes:
+      'refinery/stores/store':
+        title: Title
+        description: Description
+        image: Image
+        file: File
