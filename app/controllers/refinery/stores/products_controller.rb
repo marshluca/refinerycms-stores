@@ -1,4 +1,4 @@
-mStoreodule Refinery
+module Refinery
   module Stores
     class ProductsController < ::ApplicationController
 
