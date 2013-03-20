@@ -5,12 +5,19 @@ module Refinery
 
   module Stores
     require 'refinery/stores/engine'
+    require 'refinery/stores/configuration'
+
+    autoload :Version, 'refinery/stores/version'
 
     class << self
       attr_writer :root
 
       def root
         @root ||= Pathname.new(File.expand_path('../../../', __FILE__))
+      end
+
+      def version
+        ::Refinery::Stores::Version.to_s
       end
 
       def factory_paths
