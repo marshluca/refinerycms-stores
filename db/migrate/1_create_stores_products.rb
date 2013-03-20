@@ -21,7 +21,7 @@ class CreateStoresProducts < ActiveRecord::Migration
     end
 
     if defined?(::Refinery::Page)
-      ::Refinery::Page.delete_all({:link_url => "/stores/products"})
+      ::Refinery::Page.delete_all({:link_url => "/stores"})
     end
 
     drop_table :refinery_products
