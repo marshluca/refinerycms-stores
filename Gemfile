@@ -1,7 +1,8 @@
-source "http://rubygems.org"
+source "http://ruby.taobao.org"
 
 gemspec
 
+gem 'rb-readline'
 gem 'refinerycms', '~> 2.0.3'
 gem 'refinerycms-i18n', '~> 2.0.2'
 
