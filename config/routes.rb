@@ -9,15 +9,15 @@ Refinery::Core::Engine.routes.append do
   # Admin routes
   namespace :stores, :path => '' do
     namespace :admin, :path => 'refinery' do
-      scope :path => 'products' do
-        root :to => "products#index"
-      end
-
-      # resources :stores, :except => :show do
-      #   collection do
-      #     post :update_positions
-      #   end
+      # scope :path => 'products' do
+      #   root :to => "products#index"
       # end
+
+      resources :products, :except => :show do
+        collection do
+          post :update_positions
+        end
+      end
     end
   end
 

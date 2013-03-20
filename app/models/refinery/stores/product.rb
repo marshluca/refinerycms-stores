@@ -1,4 +1,4 @@
-mStoreodule Refinery
+module Refinery
   module Stores
     class Product < Refinery::Core::BaseModel
       self.table_name = 'refinery_products'
