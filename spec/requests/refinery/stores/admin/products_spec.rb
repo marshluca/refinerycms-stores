@@ -4,17 +4,17 @@ require "spec_helper"
 describe Refinery do
   describe "Stores" do
     describe "Admin" do
-      describe "products" do
+      describe "stores" do
         login_refinery_user
 
-        describe products list" do
+        describe "stores list" do
           before do
-            FactoryGirl.create(:product, :title => "UniqueTitleOne")
-            FactoryGirl.create(:product, :title => "UniqueTitleTwo")
+            FactoryGirl.create(:store, :title => "UniqueTitleOne")
+            FactoryGirl.create(:store, :title => "UniqueTitleTwo")
           end
 
           it "shows two items" do
-            visit refinery.stores_admin_products_path
+            visit refinery.stores_admin_stores_path
             page.should have_content("UniqueTitleOne")
             page.should have_content("UniqueTitleTwo")
           end
@@ -22,7 +22,7 @@ describe Refinery do
 
         describe "create" do
           before do
-            visit refinery.stores_admin_products_path
+            visit refinery.stores_admin_stores_path
 
             click_link "Add New Store"
           end
@@ -33,7 +33,7 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
-              Refinery::Stores::Product.count.should == 1
+              Refinery::Stores::Store.count.should == 1
             end
           end
 
@@ -42,15 +42,15 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("Title can't be blank")
-              Refinery::Stores::Product.count.should == 0
+              Refinery::Stores::Store.count.should == 0
             end
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:product, :title => "UniqueTitle") }
+            before { FactoryGirl.create(:store, :title => "UniqueTitle") }
 
             it "should fail" do
-              visit refinery.stores_admin_products_path
+              visit refinery.stores_admin_stores_path
 
               click_link "Add New Store"
 
@@ -58,7 +58,7 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("There were problems")
-              Refinery::Stores::Product.count.should == 1
+              Refinery::Stores::Store.count.should == 1
             end
           end
 
@@ -69,26 +69,26 @@ describe Refinery do
 
             describe "add a page with title for default locale" do
               before do
-                visit refinery.stores_admin_products_path
+                visit refinery.stores_admin_stores_path
                 click_link "Add New Store"
                 fill_in "Title", :with => "First column"
                 click_button "Save"
               end
 
               it "should succeed" do
-                Refinery::Stores::Product.count.should == 1
+                Refinery::Stores::Store.count.should == 1
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/en.png']")
                 end
               end
 
               it "should show title in the admin menu" do
-                p = Refinery::Stores::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_content('First column')
                 end
               end
@@ -96,12 +96,12 @@ describe Refinery do
 
             describe "add a store with title for primary and secondary locale" do
               before do
-                visit refinery.stores_admin_products_path
+                visit refinery.stores_admin_stores_path
                 click_link "Add New Store"
                 fill_in "Title", :with => "First column"
                 click_button "Save"
 
-                visit refinery.stores_admin_products_path
+                visit refinery.stores_admin_stores_path
                 within ".actions" do
                   click_link "Edit this store"
                 end
@@ -113,21 +113,21 @@ describe Refinery do
               end
 
               it "should succeed" do
-                Refinery::Stores::Product.count.should == 1
-                Refinery::Stores::Product::Translation.count.should == 2
+                Refinery::Stores::Store.count.should == 1
+                Refinery::Stores::Store::Translation.count.should == 2
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/en.png']")
                   page.should have_css("img[src='/assets/refinery/icons/flags/cs.png']")
                 end
               end
 
               it "should show title in backend locale in the admin menu" do
-                p = Refinery::Store::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_content('First column')
                 end
               end
@@ -135,7 +135,7 @@ describe Refinery do
 
             describe "add a title with title only for secondary locale" do
               before do
-                visit refinery.stores_admin_products_path
+                visit refinery.stores_admin_stores_path
                 click_link "Add New Store"
                 within "#switch_locale_picker" do
                   click_link "Cs"
@@ -146,15 +146,15 @@ describe Refinery do
               end
 
               it "should show title in backend locale in the admin menu" do
-                p = Refinery::Stores::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_content('First translated column')
                 end
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Product.last
-                within "#product_#{p.id}" do
+                p = Refinery::Stores::Store.last
+                within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/cs.png']")
                 end
               end
@@ -164,10 +164,10 @@ describe Refinery do
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:product, :title => "A title") }
+          before { FactoryGirl.create(:store, :title => "A title") }
 
           it "should succeed" do
-            visit refinery.stores_admin_products_path
+            visit refinery.stores_admin_stores_path
 
             within ".actions" do
               click_link "Edit this store"
@@ -182,15 +182,15 @@ describe Refinery do
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:product, :title => "UniqueTitleOne") }
+          before { FactoryGirl.create(:store, :title => "UniqueTitleOne") }
 
           it "should succeed" do
-            visit refinery.stores_admin_products_path
+            visit refinery.stores_admin_stores_path
 
             click_link "Remove this store forever"
 
             page.should have_content("'UniqueTitleOne' was successfully removed.")
-            Refinery::Stores::Product.count.should == 0
+            Refinery::Stores::Store.count.should == 0
           end
         end
 

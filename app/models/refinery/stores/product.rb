@@ -1,7 +1,7 @@
-module Refinery
+mStoreodule Refinery
   module Stores
-    class Store < Refinery::Core::BaseModel
-      self.table_name = 'refinery_stores'
+    class Product < Refinery::Core::BaseModel
+      self.table_name = 'refinery_products'
 
       attr_accessible :title, :description, :image_id, :file_id, :position
 

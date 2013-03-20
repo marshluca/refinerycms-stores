@@ -1,7 +1,7 @@
-class CreateStoresStores < ActiveRecord::Migration
+class CreateStoresProducts < ActiveRecord::Migration
 
   def up
-    create_table :refinery_stores do |t|
+    create_table :refinery_products do |t|
       t.string :title
       t.text :description
       t.integer :image_id
@@ -11,7 +11,7 @@ class CreateStoresStores < ActiveRecord::Migration
       t.timestamps
     end
 
-    Refinery::Stores::Store.create_translation_table! :title => :string, :description => :text
+    Refinery::Stores::Product.create_translation_table! :title => :string, :description => :text
 
   end
 
@@ -21,12 +21,12 @@ class CreateStoresStores < ActiveRecord::Migration
     end
 
     if defined?(::Refinery::Page)
-      ::Refinery::Page.delete_all({:link_url => "/stores/stores"})
+      ::Refinery::Page.delete_all({:link_url => "/stores/products"})
     end
 
-    drop_table :refinery_stores
+    drop_table :refinery_products
 
-    Refinery::Stores::Store.drop_translation_table!
+    Refinery::Stores::Product.drop_translation_table!
 
   end
 

@@ -1,8 +1,8 @@
-module Refinery
+mStoreodule Refinery
   module Stores
-    class StoresController < ::ApplicationController
+    class ProductsController < ::ApplicationController
 
-      before_filter :find_all_stores
+      before_filter :find_all_products
       before_filter :find_page
 
       def index
@@ -12,7 +12,7 @@ module Refinery
       end
 
       def show
-        @store = Store.find(params[:id])
+        @product = Product.find(params[:id])
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @store in the line below:
@@ -21,8 +21,8 @@ module Refinery
 
     protected
 
-      def find_all_stores
-        @stores = Store.order('position ASC')
+      def find_all_products
+        @products = Product.order('position ASC')
       end
 
       def find_page

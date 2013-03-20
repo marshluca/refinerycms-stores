@@ -2,17 +2,22 @@ Refinery::Core::Engine.routes.append do
 
   # Frontend routes
   namespace :stores do
-    resources :stores, :path => '', :only => [:index, :show]
+    root :to => "products#index"
+    resources :products, :only => [:show]
   end
 
   # Admin routes
   namespace :stores, :path => '' do
     namespace :admin, :path => 'refinery' do
-      resources :stores, :except => :show do
-        collection do
-          post :update_positions
-        end
+      scope :path => 'products' do
+        root :to => "products#index"
       end
+
+      # resources :stores, :except => :show do
+      #   collection do
+      #     post :update_positions
+      #   end
+      # end
     end
   end
 

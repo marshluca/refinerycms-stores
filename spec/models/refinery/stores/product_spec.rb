@@ -2,10 +2,10 @@ require 'spec_helper'
 
 module Refinery
   module Stores
-    describe Store do
+    describe Product do
       describe "validations" do
         subject do
-          FactoryGirl.create(:store,
+          FactoryGirl.create(:product,
           :title => "Refinery CMS")
         end
 
