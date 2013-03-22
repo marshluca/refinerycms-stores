@@ -5,13 +5,20 @@ Stores engine for Refinery CMS
 
 ## Todo List
 
+###Admin Area
+
+* product management
+* category management
+* order management
+
+###Front-end
+
 * product list
   * list categories
   * filter products by category
 * view one product
   * basic information
   * add to cart
-  * add to wishlist
   * email to friends
 * shopping cart
   * editing the amount of products
@@ -20,7 +27,6 @@ Stores engine for Refinery CMS
 * Sign in, Sign up, Sign out
 * My Account
   * orders
-  * wish list
   * linked Social Accounts
   * edit
 
