@@ -9,8 +9,8 @@ describe Refinery do
 
         describe "stores list" do
           before do
-            FactoryGirl.create(:store, :title => "UniqueTitleOne")
-            FactoryGirl.create(:store, :title => "UniqueTitleTwo")
+            FactoryGirl.create(:product, :title => "UniqueTitleOne")
+            FactoryGirl.create(:product, :title => "UniqueTitleTwo")
           end
 
           it "shows two items" do
@@ -33,7 +33,7 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("'This is a test of the first string field' was successfully added.")
-              Refinery::Stores::Store.count.should == 1
+              Refinery::Stores::Product.count.should == 1
             end
           end
 
@@ -42,12 +42,12 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("Title can't be blank")
-              Refinery::Stores::Store.count.should == 0
+              Refinery::Stores::Product.count.should == 0
             end
           end
 
           context "duplicate" do
-            before { FactoryGirl.create(:store, :title => "UniqueTitle") }
+            before { FactoryGirl.create(:product, :title => "UniqueTitle") }
 
             it "should fail" do
               visit refinery.stores_admin_stores_path
@@ -58,7 +58,7 @@ describe Refinery do
               click_button "Save"
 
               page.should have_content("There were problems")
-              Refinery::Stores::Store.count.should == 1
+              Refinery::Stores::Product.count.should == 1
             end
           end
 
@@ -76,18 +76,18 @@ describe Refinery do
               end
 
               it "should succeed" do
-                Refinery::Stores::Store.count.should == 1
+                Refinery::Stores::Product.count.should == 1
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/en.png']")
                 end
               end
 
               it "should show title in the admin menu" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_content('First column')
                 end
@@ -113,12 +113,12 @@ describe Refinery do
               end
 
               it "should succeed" do
-                Refinery::Stores::Store.count.should == 1
-                Refinery::Stores::Store::Translation.count.should == 2
+                Refinery::Stores::Product.count.should == 1
+                Refinery::Stores::Product::Translation.count.should == 2
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/en.png']")
                   page.should have_css("img[src='/assets/refinery/icons/flags/cs.png']")
@@ -126,7 +126,7 @@ describe Refinery do
               end
 
               it "should show title in backend locale in the admin menu" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_content('First column')
                 end
@@ -146,14 +146,14 @@ describe Refinery do
               end
 
               it "should show title in backend locale in the admin menu" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_content('First translated column')
                 end
               end
 
               it "should show locale flag for page" do
-                p = Refinery::Stores::Store.last
+                p = Refinery::Stores::Product.last
                 within "#store_#{p.id}" do
                   page.should have_css("img[src='/assets/refinery/icons/flags/cs.png']")
                 end
@@ -164,7 +164,7 @@ describe Refinery do
         end
 
         describe "edit" do
-          before { FactoryGirl.create(:store, :title => "A title") }
+          before { FactoryGirl.create(:product, :title => "A title") }
 
           it "should succeed" do
             visit refinery.stores_admin_stores_path
@@ -182,7 +182,7 @@ describe Refinery do
         end
 
         describe "destroy" do
-          before { FactoryGirl.create(:store, :title => "UniqueTitleOne") }
+          before { FactoryGirl.create(:product, :title => "UniqueTitleOne") }
 
           it "should succeed" do
             visit refinery.stores_admin_stores_path
@@ -190,7 +190,7 @@ describe Refinery do
             click_link "Remove this store forever"
 
             page.should have_content("'UniqueTitleOne' was successfully removed.")
-            Refinery::Stores::Store.count.should == 0
+            Refinery::Stores::Product.count.should == 0
           end
         end
 
