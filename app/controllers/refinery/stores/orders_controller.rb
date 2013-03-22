@@ -1,6 +1,6 @@
 module Refinery
   module Stores
-    class OrdersController < ::ApplicationController
+    class OrdersController < BaseController
 
     end
   end

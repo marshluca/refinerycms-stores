@@ -1,7 +1,6 @@
 module Refinery
   module Stores
-    class ProductsController < ::ApplicationController
-
+    class ProductsController < BaseController
       before_filter :find_all_products
       before_filter :find_page
 

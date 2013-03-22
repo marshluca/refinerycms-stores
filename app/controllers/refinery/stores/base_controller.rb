@@ -1,6 +1,6 @@
 module Refinery
   module Stores
-    class CategorisController < BaseController
+    class BaseController < ::ApplicationController
 
     end
   end
