@@ -41,7 +41,7 @@ group :development, :test do
         gem 'ruby_gntp', '~> 0.3.4'
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '~> 0.8.8'
+        gem 'rb-inotify', '~> 0.9'
         gem 'libnotify',  '~> 0.7.2'
         gem 'therubyracer', '~> 0.10.0'
       end
@@ -55,7 +55,7 @@ group :development, :test do
         gem 'ruby_gntp', '~> 0.3.4'
       end
       if RbConfig::CONFIG['target_os'] =~ /linux/i
-        gem 'rb-inotify', '~> 0.8.8'
+        gem 'rb-inotify', '~> 0.9'
         gem 'libnotify',  '~> 0.7.2'
       end
     end
