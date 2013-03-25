@@ -1,10 +1,10 @@
-
-<section id='records'>
+<%= render :partial => '/refinery/stores/admin/submenu' %>
+<div id='records'>
   <% if searching? %>
     <h2><%= t('results_for', :scope => 'refinery.admin.search',
                              :query => params[:search]) %></h2>
     <% if @categories.any? %>
-      <%= render :partial => "store_categories",
+      <%= render :partial => "stores_categories",
                  :collection => @categories %>
     <% else %>
       <p><%= t('no_results', :scope => 'refinery.admin.search') %></p>
@@ -19,14 +19,9 @@
     <% else %>
       <p>
         <strong>
-          <%= t('.no_items_yet', :create => t('new', :scope => 'refinery.stores.admin.submenu.blogcategories')) %>
+          <%= t('.no_items_yet', :create => t('new', :scope => 'refinery.stores.admin.submenu.categories')) %>
         </strong>
       </p>
     <% end %>
   <% end %>
-</div>
-
-
-<aside id='actions'>
-  <%= render '/refinery/stores/admin/products/actions' %>
 </div>

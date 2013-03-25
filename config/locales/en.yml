@@ -5,6 +5,19 @@ en:
         title: Products
     stores:
       admin:
+        submenu:
+          products:
+            title: Products
+            manage: Products Management
+            new: Add New Product
+          categories:
+            title: Categories
+            manage: Categories Management
+            new: Add New Category
+          orders:
+            title: Orders
+            manage: Orders Management
+            new: Add New Order
         products:
           actions:
             create_new: Add New Product

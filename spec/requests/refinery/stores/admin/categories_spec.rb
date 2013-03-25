@@ -40,7 +40,7 @@ describe Refinery do
             it "should fail" do
               click_button "Save"
 
-              page.should have_content("Title can't be blank")
+              page.should have_content("Name can't be blank")
               Refinery::Stores::Category.count.should == 0
             end
           end
