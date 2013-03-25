@@ -15,7 +15,7 @@ describe Refinery do
 
           it "shows two categories" do
             visit refinery.stores_admin_categories_path
-            page.should have_content("ProductCategoryTwo")
+            page.should have_content("ProductCategoryOne")
             page.should have_content("ProductCategoryTwo")
           end
         end

@@ -1,7 +1,7 @@
 class CreateStoresProducts < ActiveRecord::Migration
 
   def up
-    create_table Refinery::Stores::Category.table_name do |t|
+    create_table Refinery::Stores::Product.table_name do |t|
       t.string :title
       t.text :description
       t.references :image
