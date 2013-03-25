@@ -4,10 +4,10 @@ require "spec_helper"
 describe Refinery do
   describe "Stores" do
     describe "Admin" do
-      describe "stores" do
+      describe "products" do
         login_refinery_user
 
-        describe "stores list" do
+        describe "products list" do
           before do
             FactoryGirl.create(:product, :title => "UniqueTitleOne")
             FactoryGirl.create(:product, :title => "UniqueTitleTwo")
