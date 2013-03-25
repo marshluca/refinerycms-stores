@@ -1,12 +1,16 @@
 class CreateStoresProducts < ActiveRecord::Migration
 
   def up
-    create_table :refinery_products do |t|
+    create_table Refinery::Stores::Category.table_name do |t|
       t.string :title
       t.text :description
-      t.integer :image_id
-      t.integer :file_id
-      t.integer :position
+      t.references :image
+      t.references :category
+      t.datetime :available_on
+      t.integer :count_on_hand
+      t.string :permalink
+      t.string :meta_description
+      t.datetime :deleted_at
 
       t.timestamps
     end
