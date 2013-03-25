@@ -1,13 +1,15 @@
 en:
   refinery:
     plugins:
-      products:
+      stores:
         title: products
-    products:
+    stores:
       admin:
         products:
           actions:
             create_new: Add New Product
+            category: Category Management
+            new_category: Add New Category
             reorder: Reorder products
             reorder_done: Done Reordering products
           records:

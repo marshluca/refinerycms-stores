@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.date              = '2013-03-19'
   s.summary           = 'Stores engine for Refinery CMS'
   s.require_paths     = %w(lib)
-  s.files             = Dir["{app,config,db,lib}/**/*"] + ["readme.md"]
+  s.files             = Dir["{app,config,db,lib}/**/*"] + ["README.md"]
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.0.9'

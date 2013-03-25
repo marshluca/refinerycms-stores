@@ -18,6 +18,10 @@ Refinery::Core::Engine.routes.append do
           post :update_positions
         end
       end
+
+      resources :categories
+
+      resources :orders
     end
   end
 
