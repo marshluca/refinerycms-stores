@@ -9,8 +9,8 @@ describe Refinery do
 
         describe "category list" do
           before do
-            FactoryGirl.create(:category, :title => "ProductCategoryOne")
-            FactoryGirl.create(:category, :title => "ProductCategoryTwo")
+            FactoryGirl.create(:category, :name => "ProductCategoryOne")
+            FactoryGirl.create(:category, :name => "ProductCategoryTwo")
           end
 
           it "shows two categories" do
