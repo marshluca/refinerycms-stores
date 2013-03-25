@@ -1,8 +1,8 @@
 en:
   refinery:
     plugins:
-      stores:
-        title: products
+      refinerycms_stores:
+        title: Products
     stores:
       admin:
         products:
