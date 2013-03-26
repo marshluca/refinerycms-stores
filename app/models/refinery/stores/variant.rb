@@ -1,3 +1,4 @@
+__END__
 module Refinery
   module Stores
     class Variant < Refinery::Core::BaseModel
