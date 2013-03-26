@@ -2,7 +2,8 @@ PATH
   remote: .
   specs:
     refinerycms-stores (0.1)
-      refinerycms-core (~> 2.0.9)
+      refinerycms-core (~> 2.0.10)
+      spree_core (= 1.3.1)
 
 GEM
   remote: http://ruby.taobao.org/
