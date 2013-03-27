@@ -24,7 +24,10 @@ end
 
 gem 'jquery-rails', '~> 2.0.0'
 
-gem 'rb-readline'
+group :development do
+  gem 'rb-readline'
+  gem 'thin'
+end
 
 gem 'refinerycms', '~> 2.0.0'
 
@@ -43,4 +46,11 @@ gem 'refinerycms', '~> 2.0.0'
 # To use debugger
 # gem 'debugger'
 
-gem 'spree', '~> 1.2.0'
+# gem 'spree', '~> 1.2.0'
+
+gem 'spree_core', '~> 1.2.0'
+gem 'spree_promo', '~> 1.2.0'
+gem 'spree_dash', '~> 1.2.0'
+# gem 'spree_api', '~> 1.2.0'
+# gem 'spree_cmd', '~> 1.2.0'
+# gem 'spree_sample', '~> 1.2.0'
