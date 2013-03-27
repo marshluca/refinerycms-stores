@@ -11,7 +11,18 @@ end
 
 module Store
   class Application < Rails::Application
-    
+
+    require 'rack/rewrite'
+    config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+      # example rewrites
+      rewrite %r{/refinery/store/(\w+)}, "/admin/$1"
+      # rewrite '/wiki/John_Trupiano', '/john'
+      # r301 '/wiki/Yair_Flicker', '/yair'
+      # r302 '/wiki/Greg_Jastrab', '/greg'
+      # r301 %r{/wiki/(\w+)_\w+}, '/$1'
+      # r301 %r{/blog/tag/.*},"/blog"
+    end
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|

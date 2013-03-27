@@ -30,6 +30,7 @@ group :development do
 end
 
 gem 'refinerycms', '~> 2.0.0'
+gem 'rack-rewrite', '~> 1.0.2'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
