@@ -16,3 +16,6 @@ rerun.txt
 pickle-email-*.html
 public/spree
 .rvmrc
+tags
+/doc
+
