@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Weblog::Application.load_tasks
+Store::Application.load_tasks
