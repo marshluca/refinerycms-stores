@@ -5,7 +5,7 @@
 #
 # In order to initialize a setting do: 
 # config.setting_name = 'new value'
-Ssamplepree.config do |config|
+Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
@@ -13,4 +13,3 @@ end
 
 # Spree.user_class = "Spree::LegacyUser"
 Spree.user_class = "Refinery::User"
-require 'helpers/authentication_helpers'
