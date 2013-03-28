@@ -2,9 +2,21 @@ source "http://ruby.taobao.org"
 
 gemspec
 
-gem 'rb-readline'
-gem 'refinerycms', '~> 2.0.3'
+gem 'jquery-rails', '~> 2.0'
+
+# RefineryCMS
+# refinerycms ~> 2.1.0.dev will require jquery-rails ~> 2.2.0
+gem 'refinerycms', '~> 2.0.10'
 gem 'refinerycms-i18n', '~> 2.0.2'
+
+# Spree Models and Mailers
+# spree_core >= 1.3.2 requires jquery-rails ~> 2.2.0
+gem 'spree_core',   '~> 1.2.0'
+gem 'spree_promo',  '~> 1.2.0'
+# gem 'spree_sample', '~> 1.2.0'
+# gem 'spree_dash',   '~> 1.2.0'
+
+gem 'rb-readline', :group => 'development'
 
 # Database Configuration
 platforms :jruby do
@@ -21,7 +33,7 @@ platforms :ruby do
 end
 
 group :development, :test do
-  gem 'refinerycms-testing', '~> 2.0.3'
+  gem 'refinerycms-testing', '~> 2.0.10'
   gem 'guard-rspec', '~> 0.7.0'
 
   platforms :mswin, :mingw do
@@ -70,4 +82,3 @@ group :assets do
   gem 'uglifier'
 end
 
-gem 'jquery-rails', '~> 2.0.0'
