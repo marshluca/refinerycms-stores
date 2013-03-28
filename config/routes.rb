@@ -1,9 +1,4 @@
 Refinery::Core::Engine.routes.draw do
-  mount Spree::Core::Engine, :at => '/spree'
+  mount Spree::Core::Engine, :at => '/store'
 end
-
-Refinery::Core::Engine.routes.append do
-  mount Refinery::Core::Engine, :at => "/"
-end
-
 

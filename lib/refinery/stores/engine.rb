@@ -10,7 +10,7 @@ module Refinery
       initializer "register refinerycms_stores plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.name = "refinerycms_stores"
-          plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.stores_admin_products_path }
+          plugin.url = "/store/admin" # proc { Refinery::Core::Engine.routes.url_helpers.stores_admin_products_path }
           plugin.pathname = root
           plugin.menu_match = /refinery\/stores\/?(products|categories)?/
           plugin.activity = { :class_name => :'refinery/stores/product' }
