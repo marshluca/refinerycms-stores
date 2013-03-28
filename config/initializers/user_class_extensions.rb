@@ -1,3 +1,4 @@
+__END__
 Spree::Core::Engine.config.to_prepare do
   if Spree.user_class
     Spree.user_class.class_eval do
