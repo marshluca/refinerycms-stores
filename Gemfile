@@ -11,8 +11,9 @@ gem 'refinerycms-i18n', '~> 2.0.2'
 
 # Spree Models and Mailers
 # spree_core >= 1.3.2 requires jquery-rails ~> 2.2.0
-gem 'spree_core',  '1.3.1'
-gem 'spree_promo', '1.3.1'
+gem 'spree_core',   '~> 1.2.0'
+gem 'spree_promo',  '~> 1.2.0'
+gem 'spree_sample', '~> 1.2.0'
 
 gem 'rb-readline', :group => 'development'
 

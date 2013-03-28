@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   # Runtime dependencies
   s.add_dependency             'refinerycms-core',    '~> 2.0.10'
-  s.add_dependency             'spree_core',          '1.3.1'
+  s.add_dependency             'spree_core',          '~> 1.2.0'
 
   # Development dependencies (usually used for testing)
   s.add_development_dependency 'refinerycms-testing', '~> 2.0.10'
