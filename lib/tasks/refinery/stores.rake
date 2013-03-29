@@ -2,12 +2,11 @@ namespace :refinery do
 
   namespace :stores do
 
-    # call this task by running: rake refinery:stores:my_task
-    # desc "Description of my task below"
-    # task :my_task => :environment do
-    #   # add your logic here
-    # end
-
+    desc "Create admin username and password"
+    task :create_administrator => :environment do
+      require File.join(File.dirname(__FILE__), '..', '..', '..', 'db', 'default', 'users.rb')
+      puts "Done!"
+    end
   end
 
 end
