@@ -1,9 +1,9 @@
 module Refinery
   module Stores
     class Version
-      @major = 1
-      @minor = 0
-      @tiny  = 0
+      @major = 0
+      @minor = 1
+      @tiny  = 1
 
       class << self
         attr_reader :major, :minor, :tiny

@@ -2,7 +2,7 @@ en:
   refinery:
     plugins:
       refinerycms_stores:
-        title: Products
+        title: Store
     stores:
       admin:
         submenu:

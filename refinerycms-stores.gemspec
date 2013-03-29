@@ -1,4 +1,7 @@
 # Encoding: UTF-8
+require File.expand_path('../lib/refinery/stores/version', __FILE__)
+
+version = Refinery::Stores::Version.to_s
 
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
@@ -7,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage          = %q{https://github.com/marshluca/refinerycms-stores}
   s.license           = %q{MIT}
   s.name              = 'refinerycms-stores'
-  s.version           = '0.1'
+  s.version           = version
   s.description       = 'Stores engine for Refinery CMS'
   s.date              = '2013-03-19'
   s.summary           = 'Stores engine for Refinery CMS'
