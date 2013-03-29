@@ -1,17 +1,15 @@
 require 'spec_helper'
 
 describe Refinery do
-  describe "Stores" do
-    describe "Mount" do
-        login_refinery_user
+  describe 'Store' do
+    login_refinery_user
 
-        describe "GET /refinery/store" do
+    describe "GET /refinery/store" do
 
-          it "shows two items" do
-            visit refinery.store_admin_products_path
-            page.should have_content("Spree Store")
-          end
-        end
+      it "should see store admin panel" do
+        visit '/refinery/store'
+        page.should have_content("Listing Orders")
+      end
     end
   end
 end
