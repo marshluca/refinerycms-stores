@@ -13,3 +13,10 @@ end
 
 # Spree.user_class = "Spree::LegacyUser"
 Spree.user_class = "Refinery::User"
+
+# Spree logic overwrite
+Spree::Admin::BaseController.class_eval do
+  layout 'refinery/admin'
+
+  helper Refinery::CustomAssetsHelper
+end
