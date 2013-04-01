@@ -33,20 +33,37 @@ def prompt_for_admin_email
   email
 end
 
+def prompt_for_admin_username
+  if ENV['ADMIN_USERNAME']
+    username = ENV['ADMIN_USERNAME'].dup
+    say "Admin User #{username}"
+  else
+    username = ask('Username [admin]: ') do |q|
+      q.echo = true
+      q.whitespace = :strip
+    end
+    username = 'admin' if username.blank?
+  end
+
+  username
+end
+
 def create_admin_user
   if ENV['AUTO_ACCEPT']
     password = 'spree123'
     email = 'spree@example.com'
+    username = 'admin'
   else
     puts 'Create the admin user (press enter for defaults).'
-    #name = prompt_for_admin_name unless name
     email = prompt_for_admin_email
+    username = prompt_for_admin_username
     password = prompt_for_admin_password
   end
   attributes = {
     :password => password,
     :password_confirmation => password,
     :email => email,
+    :username => username,
     :login => email
   }
 
