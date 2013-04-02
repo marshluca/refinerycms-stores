@@ -1,0 +1,13 @@
+<% if params[:controller].to_s.start_with?('spree/admin') %>
+  <div id="admin-menu" data-hook>
+  <ul data-hook="admin_tabs">
+    <%= render :partial => 'spree/admin/shared/tabs' %>
+  </ul>
+  <br class="clear" />
+  </div>
+
+  <div id="sub-menu" data-hook>
+    <%= yield :sub_menu %>
+    <br class="clear" />
+  </div>
+<% end %>
