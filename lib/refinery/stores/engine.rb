@@ -1,5 +1,4 @@
 require 'spree/core'
-require 'deface'
 
 module Refinery
   module Stores
@@ -26,17 +25,12 @@ module Refinery
         # end
 
         ::ApplicationController.send :include, Spree::AuthenticationHelpers
+        ::ApplicationController.send :include, Refinery::AuthenticatedSystem
       end
 
       config.after_initialize do
         Refinery.register_extension(Refinery::Stores)
-
-        Deface::Override.new(
-          :virtual_path => "layouts/refinery/admin",
-          :name => "spree-menu",
-          :insert_before => "div#flash_container",
-          :partial => "refinery/override/spree_menu"
-        )
+        Refinery::Stores::Override.enable
       end
 
       config.to_prepare &method(:activate).to_proc
