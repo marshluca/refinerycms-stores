@@ -16,7 +16,11 @@ gem 'spree_promo',  '1.2.0'
 # gem 'spree_sample', '~> 1.2.0'
 # gem 'spree_dash',   '~> 1.2.0'
 
-gem 'rb-readline', :group => 'development'
+group :development do
+  gem 'rb-readline'
+  gem 'quiet_assets'
+  gem 'thin'
+end
 
 # Database Configuration
 platforms :jruby do

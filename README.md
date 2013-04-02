@@ -17,9 +17,15 @@ then install refinerycms-stores:
     bundle exec rake db:seed
     bundle exec rails s
 
-If you want to create an administrator,
 
-    bundle exec rake refinery:stores:create_administrator
+Now you can visit [http://localhost:3000/refinery](http://localhost:3000/refinery) to register your account.
 
 
-Now you can visit [http://localhost:3000/refinery](http://localhost:3000/refinery) .
+If you want to be an administrator, run it in console:
+
+    > u = Refinery::User.first
+    > u.spree_roles.create :name => 'admin'
+
+Now you can access
+[http://localhost:3000/store/admin](http://localhost:3000/store/admin)
+to manage your store.
