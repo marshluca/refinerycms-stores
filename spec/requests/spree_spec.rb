@@ -4,9 +4,9 @@ require 'spree/core'
 describe Refinery do
   describe 'Store' do
     describe 'Admin' do
-      login_refinery_user
+      login_refinery_superuser
 
-      describe "GET /store/admin/" do
+      context "GET /store/admin/" do
         it "should see spree orders admin panel with refinery layout" do
           visit spree.admin_path
           page.should have_selector(:title, "Refinery")
@@ -19,7 +19,7 @@ describe Refinery do
         end
       end
 
-      describe "GET /store/admin/products" do
+      context "GET /store/admin/products" do
         it "should see spree products admin panel" do
           visit spree.admin_products_path
           page.should have_content("Listing Products")
