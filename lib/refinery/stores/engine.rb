@@ -1,3 +1,5 @@
+require 'spree/core'
+
 module Refinery
   module Stores
     class Engine < Rails::Engine
