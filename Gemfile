@@ -35,6 +35,7 @@ end
 group :development, :test do
   gem 'refinerycms-testing', '~> 2.0.10'
   gem 'guard-rspec', '~> 0.7.0'
+  gem 'thin'
 
   platforms :mswin, :mingw do
     gem 'win32console', '~> 1.3.0'
