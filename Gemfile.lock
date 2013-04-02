@@ -4,6 +4,7 @@ PATH
     refinerycms-stores (0.1.1)
       refinerycms-core (~> 2.0.10)
       spree_core (~> 1.2.0)
+      spree_promo (~> 1.2.0)
 
 GEM
   remote: http://ruby.taobao.org/
