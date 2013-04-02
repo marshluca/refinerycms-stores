@@ -6,27 +6,45 @@ describe Refinery do
     describe 'Admin' do
       login_refinery_superuser
 
+      context "Get /refinery" do
+        before do
+          visit refinery.admin_root_path
+        end
+
+        it "should see refinery dashboard" do
+          page.should have_content("Dashboard")
+        end
+
+        it "should integrate spree store tab" do
+          click_link "Store"
+          page.should have_content("Listing Orders")
+        end
+      end
+
       context "GET /store/admin/" do
-        it "should see spree orders admin panel with refinery layout" do
+        before do
           visit spree.admin_path
-          page.should have_selector(:title, "Refinery")
+        end
+
+        it "should see spree orders admin panel with refinery layout" do
           page.should have_content("Listing Orders")
         end
 
         it "should have store menu on the refinery layout" do
-          visit spree.admin_path
-          page.should have_selector("div#admin_menu")
+          page.should have_selector("div#admin-menu")
         end
       end
 
       context "GET /store/admin/products" do
-        it "should see spree products admin panel" do
+        before do
           visit spree.admin_products_path
+        end
+
+        it "should see spree products admin panel" do
           page.should have_content("Listing Products")
         end
 
         it "should have products submenu" do
-          visit spree.admin_products_path
           page.should have_selector("div#sub-menu")
         end
       end
