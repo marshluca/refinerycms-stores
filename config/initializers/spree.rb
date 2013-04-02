@@ -22,5 +22,6 @@ Spree::Admin::BaseController.class_eval do
   layout 'refinery/admin'
   helper Refinery::CustomAssetsHelper
   helper Refinery::SiteBarHelper
+  helper Refinery::TagHelper
   include Refinery::AuthenticatedSystem
 end
