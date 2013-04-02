@@ -1,4 +1,5 @@
 require 'spree/core'
+require 'deface'
 
 module Refinery
   module Stores
@@ -12,10 +13,10 @@ module Refinery
       initializer "register refinerycms_stores plugin" do
         Refinery::Plugin.register do |plugin|
           plugin.name = "refinerycms_stores"
-          plugin.url = "/store/admin" # proc { Refinery::Core::Engine.routes.url_helpers.stores_admin_products_path }
+          plugin.url = proc { Spree::Core::Engine.routes.url_helpers.admin_path }
           plugin.pathname = root
-          plugin.menu_match = /refinery\/stores\/?(products|categories)?/
-          plugin.activity = { :class_name => :'refinery/stores/product' }
+          plugin.menu_match = /store\/admin\/?(products|orders)?/
+          plugin.activity = { :class_name => :'spree/product' }
         end
       end
 
@@ -30,7 +31,6 @@ module Refinery
       config.after_initialize do
         Refinery.register_extension(Refinery::Stores)
 
-        require 'deface'
         Deface::Override.new(
           :virtual_path => "layouts/refinery/admin",
           :name => "spree-menu",
