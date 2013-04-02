@@ -6,6 +6,7 @@ module Refinery
   module Stores
     require 'refinery/stores/engine'
     require 'refinery/stores/configuration'
+    require 'refinery/stores/override'
 
     autoload :Version, 'refinery/stores/version'
 

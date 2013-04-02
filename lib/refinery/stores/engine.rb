@@ -31,7 +31,6 @@ module Refinery
       config.after_initialize do
         Refinery.register_extension(Refinery::Stores)
         Refinery::Stores::Override.enable
-
       end
 
       config.to_prepare &method(:activate).to_proc
