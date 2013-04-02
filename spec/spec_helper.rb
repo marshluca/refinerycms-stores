@@ -24,7 +24,9 @@ end
 
 def each_run
   Rails.cache.clear
-  ActiveSupport::Dependencies.clear
+  if /spork/i =~ $0 || RSpec.configuration.drb?
+    ActiveSupport::Dependencies.clear
+  end
   FactoryGirl.reload
 
   # Requires supporting files with custom matchers and macros, etc,
