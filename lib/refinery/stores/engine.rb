@@ -1,3 +1,4 @@
+require 'rack/rewrite'
 require 'spree/core'
 
 module Refinery
@@ -35,6 +36,9 @@ module Refinery
 
       config.to_prepare &method(:activate).to_proc
 
+      config.middleware.insert_before(Rack::Lock, Rack::Rewrite) do
+        rewrite %r{/refinery/store/(\w+)}, "/store/admin/$1"
+      end
     end
   end
 end

@@ -77,6 +77,13 @@ def create_admin_user
     if admin.save
       role = Spree::Role.find_or_create_by_name 'admin'
       admin.spree_roles << role
+
+      admin.add_role(:refinery)
+      # add superuser role if there are no other users
+      admin.add_role(:superuser)
+      # add plugins
+      admin.plugins = Refinery::Plugins.registered.in_menu.names
+
       admin.save
       say "Done!"
     else
