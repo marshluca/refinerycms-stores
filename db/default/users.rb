@@ -78,12 +78,11 @@ def create_admin_user
       role = Spree::Role.find_or_create_by_name 'admin'
       admin.spree_roles << role
 
-      # associate with the plugins
-      %w(refinery_dashboard refinery_users refinery_images refinery_files refinery_pages refinerycms_stores).each do |plugin|
-        if admin.plugins.where(:name => plugin).blank?
-          admin.plugins.create(:name => plugin, :position => (admin.plugins.maximum(:position) || -1) +1)
-        end
-      end
+      admin.add_role(:refinery)
+      # add superuser role if there are no other users
+      admin.add_role(:superuser)
+      # add plugins
+      admin.plugins = Refinery::Plugins.registered.in_menu.names
 
       admin.save
       say "Done!"
