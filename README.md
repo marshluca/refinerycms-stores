@@ -13,6 +13,7 @@ Add `refinerycms`, `refinerycms-stores` to your Gemfile:
 
 then run:
 
+    bundle install --path=vendor/bundle
     bundle exec rails g refinery:cms --fresh-installation
 
 If you want to be an administrator, run:
