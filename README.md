@@ -9,15 +9,16 @@ Stores engine for Refinery CMS
 Add `refinerycms`, `refinerycms-stores` to your Gemfile:
 
     gem 'refinerycms', '~> 2.0.10'
-    gem 'refinerycms-stores', :github => 'Shinetechchina/refinerycms-sores'
+    gem 'refinerycms-stores', :github => 'Shinetechchina/refinerycms-stores'
 
 then run:
 
     bundle exec rails g refinery:cms --fresh-installation
-    bundle exec rails s
 
 If you want to be an administrator, run:
      
     bundle exec rake refinery:stores:create_administrator
 
-Now you can visit [http://localhost:3000/refinery](http://localhost:3000/refinery) with your registered account.
+Now you can start your application server and visit [http://localhost:3000/refinery](http://localhost:3000/refinery) with your registered account
+
+    bundle exec rails s 
