@@ -2,9 +2,10 @@
 
 module PageCell
   class Parser < Temple::Parser
-    CODE = /^#{TAG_START}\s*(\w+)\s*(.*)?#{TAG_END}$/om
-    COMMENT = /^#{TAG_START}\s*#(.*?)#{TAG_END}$/om
-    DYNAMIC = /^#{DYNAMIC_START}(.*)#{DYNAMIC_END}$/om
+    WHITE_SPACE = /(?:&#160;|&nbsp;|\s)*/
+    CODE        = /^#{TAG_START}#{WHITE_SPACE}(\w+)#{WHITE_SPACE}(.*)?#{WHITE_SPACE}#{TAG_END}$/om
+    COMMENT     = /^#{TAG_START}#{WHITE_SPACE}#(.*?)#{WHITE_SPACE}#{TAG_END}$/om
+    DYNAMIC     = /^#{DYNAMIC_START}#{WHITE_SPACE}(.*?)#{WHITE_SPACE}#{DYNAMIC_END}$/om
     #class SyntaxError < StandardError
       #def initialize(message, position)
         #@message = message
