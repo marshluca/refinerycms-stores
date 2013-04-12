@@ -16,6 +16,8 @@ gem 'spree_promo',  '1.2.0'
 # gem 'spree_sample', '~> 1.2.0'
 # gem 'spree_dash',   '~> 1.2.0'
 
+gem 'cells'
+gem 'page_cell',          :path => File.dirname(__FILE__) + '/vendor/gems/page_cell'
 gem 'rack-rewrite', '~> 1.0.2'
 
 group :development do
