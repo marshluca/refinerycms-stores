@@ -21,11 +21,11 @@ Gem::Specification.new do |s|
   s.add_dependency             'spree'
   s.add_dependency             'refinerycms'
   s.add_dependency             'refinerycms-i18n'
+  s.add_dependency             'rack-rewrite',        '~> 1.0.2'
 
   # s.add_dependency             'refinerycms-core',    '~> 2.0.10'
   # s.add_dependency             'spree_core',          '1.2.0'
   # s.add_dependency             'spree_promo',         '1.2.0'
-  # s.add_dependency             'rack-rewrite',        '~> 1.0.2'
 
   # Development dependencies (usually used for testing)
   # s.add_development_dependency 'refinerycms-testing', '~> 2.0.10'

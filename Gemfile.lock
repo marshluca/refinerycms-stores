@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     refinerycms-stores (0.2.0)
+      rack-rewrite (~> 1.0.2)
       refinerycms
       refinerycms-i18n
       spree
