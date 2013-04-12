@@ -6,4 +6,4 @@ gemspec
 gem 'temple'
 gem 'tilt'
 gem 'minitest'
-
+gem 'cells'

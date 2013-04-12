@@ -34,8 +34,8 @@ module PageCell
 
     def wrap_instance_variable(name)
       return nil if name !~ /\A(:?[a-z0-9_]|@)+\Z/i
-      return wrap(value.instance_variable_get("@#{name}")) if value.instance_variable_defined?("@#{name}") && !name.include?('@')
-      return wrap(value.instance_variable_get(name)) if value.instance_variable_defined?(name) && name =~ /\A@/
+      return wrap(value.instance_variable_get("@#{name}")) if !name.include?('@') && value.instance_variable_defined?("@#{name}") 
+      return wrap(value.instance_variable_get(name)) if name =~ /\A@/ && value.instance_variable_defined?(name)   
     end
 
     def empty?
