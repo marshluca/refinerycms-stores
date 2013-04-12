@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency('temple', ['~> 0.6.2'])
   spec.add_runtime_dependency('tilt', ['~> 1.3.3'])
+  spec.add_runtime_dependency('cells')
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
 end
