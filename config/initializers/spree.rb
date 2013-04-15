@@ -23,5 +23,6 @@ Spree::Admin::BaseController.class_eval do
   helper Refinery::CustomAssetsHelper
   helper Refinery::SiteBarHelper
   helper Refinery::TagHelper
+  helper Refinery::AdminHelper
   include Refinery::AuthenticatedSystem
 end
